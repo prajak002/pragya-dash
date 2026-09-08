@@ -1,7 +1,8 @@
 import { useGLTF } from "@react-three/drei";
 import { useFrame } from "@react-three/fiber";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import * as THREE from "three";
+import { computeChainExplodeVectors } from "../canonical/explodeLayout";
 import { useTwinStore } from "../state/store";
 import { PartVisual } from "./PartVisual";
 
@@ -47,6 +48,7 @@ export function KalkiBody() {
     materials: Record<string, THREE.Material>;
   };
   const model = useTwinStore((s) => s.model);
+  const chainVectors = useMemo(() => (model ? computeChainExplodeVectors(model) : {}), [model]);
   if (!model) return null;
 
   const baseMaterial = gltf.materials["Kalki_Body_Material"];
@@ -63,7 +65,7 @@ export function KalkiBody() {
             name={part.id}
             geometry={meshNode.geometry}
             baseMaterial={baseMaterial}
-            explodeDir={part.explode}
+            explodeDir={chainVectors[part.id] ?? part.explode}
           />
         );
       })}

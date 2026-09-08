@@ -9,6 +9,7 @@ import { ConfigurationDetail } from "./panels/ConfigurationDetail";
 import { Documentation } from "./panels/Documentation";
 import { FindAPart } from "./panels/FindAPart";
 import { HeadV0Board } from "./panels/HeadV0Board";
+import { HoverTooltip } from "./panels/HoverTooltip";
 import { Inspector } from "./panels/Inspector";
 import { SystemTree } from "./panels/SystemTree";
 import { useTwinStore } from "./state/store";
@@ -120,6 +121,7 @@ export default function App() {
       </main>
 
       <ControlDeck />
+      <HoverTooltip />
 
       {loading && (
         <div className="load-overlay">

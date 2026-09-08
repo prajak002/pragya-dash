@@ -1,4 +1,4 @@
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { colorOf, labelOf } from "../diagrams/layout";
 import type { GraphNode } from "../canonical/types";
 import { useTwinStore, type LayerId } from "../state/store";
@@ -33,8 +33,17 @@ export function FindAPart() {
   const setLayer = useTwinStore((s) => s.setLayer);
 
   const results = useMemo(() => {
-    if (!model || !query.trim()) return [];
+    if (!model) return [];
     const q = query.trim().toLowerCase();
+    if (!q) {
+      // No query yet: surface joints/electrical (boards, actuators, buses) —
+      // body parts are already one click away in the System Explorer tree,
+      // so the search's own value-add is reaching into the rest of the graph.
+      return Object.values(model.nodes)
+        .filter((n) => n.kind !== "part")
+        .sort((a, b) => labelOf(a).localeCompare(labelOf(b)))
+        .slice(0, MAX_RESULTS);
+    }
     return Object.values(model.nodes)
       .filter((n) => n.id.toLowerCase().includes(q) || labelOf(n).toLowerCase().includes(q))
       .slice(0, MAX_RESULTS);
@@ -47,6 +56,20 @@ export function FindAPart() {
     setQuery("");
   };
 
+  useEffect(() => {
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key !== "/" || open) return;
+      const target = e.target as HTMLElement | null;
+      const typing = target && (target.tagName === "INPUT" || target.tagName === "TEXTAREA" || target.isContentEditable);
+      if (typing) return;
+      e.preventDefault();
+      setOpen(true);
+      requestAnimationFrame(() => inputRef.current?.focus());
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [open]);
+
   return (
     <div className="topbar-tool">
       <button
@@ -56,7 +79,7 @@ export function FindAPart() {
           requestAnimationFrame(() => inputRef.current?.focus());
         }}
       >
-        Find a part
+        Find a part <span className="topbar-tool-kbd">/</span>
       </button>
       {open && (
         <div className="topbar-tool-panel find-a-part-panel">
