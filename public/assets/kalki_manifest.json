@@ -1,0 +1,806 @@
+{
+  "version": "1.0",
+  "source": "Meshy_AI_Modular_Humanoid_Robo_0905200701_texture.glb",
+  "unitStatus": "Uncalibrated source coordinates; physical scale not supplied.",
+  "bodyBounds": [
+    [
+      -0.948414,
+      -0.585259,
+      -0.197365
+    ],
+    [
+      -0.520671,
+      0.56387,
+      0.225542
+    ]
+  ],
+  "bodyRegions": 25,
+  "preservation": "Every source triangle appears exactly once. Vertex attributes and source JPEG texture bytes are copied unchanged. Display groups are not printable parts.",
+  "checks": {
+    "allFacesAccounted": true,
+    "finiteAttributes": true,
+    "validIndexRange": true,
+    "uvPreserved": true,
+    "textureBytesPreserved": true,
+    "physicalScaleVerified": false,
+    "manufacturingSplitsValidated": false,
+    "printabilityValidated": false
+  },
+  "groups": [
+    {
+      "id": "K01",
+      "key": "HEAD",
+      "name": "Helmet & face",
+      "region": "Head",
+      "min": [
+        -0.8091260194778442,
+        0.42780399322509766,
+        -0.06128900125622749
+      ],
+      "max": [
+        -0.6727420091629028,
+        0.5638700127601624,
+        0.0568699985742569
+      ],
+      "center": [
+        -0.7409340143203735,
+        0.49583700299263,
+        -0.002209501340985298
+      ],
+      "explode": [
+        0,
+        0.24,
+        0
+      ],
+      "vertices": 16813,
+      "triangles": 24906,
+      "observed": "Visible helmet and visor surface; the interior is not a measured sensor or compute envelope.",
+      "proposal": "Approve helmet/visor separation, sensor apertures and removable rear access.",
+      "check": "Check sight lines, cable bend allowance and neck collision envelope."
+    },
+    {
+      "id": "K02",
+      "key": "COLLAR",
+      "name": "Neck & collar",
+      "region": "Head",
+      "min": [
+        -0.874770998954773,
+        0.38157400488853455,
+        -0.12277200073003769
+      ],
+      "max": [
+        -0.6596459746360779,
+        0.4326910078525543,
+        0.0886560007929802
+      ],
+      "center": [
+        -0.767208456993103,
+        0.40713250637054443,
+        -0.017057999968528748
+      ],
+      "explode": [
+        0,
+        0.12,
+        0
+      ],
+      "vertices": 24003,
+      "triangles": 32662,
+      "observed": "Source neck/collar region. No joint axis or bearing fit is specified.",
+      "proposal": "Define neck axis, mounting datum and cable pass-through before sizing the collar.",
+      "check": "Check head rotation envelope and access to collar fasteners."
+    },
+    {
+      "id": "K03",
+      "key": "CHEST",
+      "name": "Chest & sternum",
+      "region": "Torso",
+      "min": [
+        -0.8836299777030945,
+        0.21679699420928955,
+        -0.13121700286865234
+      ],
+      "max": [
+        -0.6345090270042419,
+        0.3884130120277405,
+        0.11083000153303146
+      ],
+      "center": [
+        -0.7590695023536682,
+        0.302605003118515,
+        -0.01019350066781044
+      ],
+      "explode": [
+        0,
+        0.06,
+        0.13
+      ],
+      "vertices": 82898,
+      "triangles": 119165,
+      "observed": "External chest, sternum and back surface grouped for inspection; not a separable load-bearing frame.",
+      "proposal": "Use approved armor seams for shell separation; define a removable emblem/sternum panel.",
+      "check": "Verify shell thickness, fastening bosses and tool access against real hardware."
+    },
+    {
+      "id": "K04",
+      "key": "ABDOMEN",
+      "name": "Abdomen plates",
+      "region": "Torso",
+      "min": [
+        -0.8264790177345276,
+        0.1374330073595047,
+        -0.15039099752902985
+      ],
+      "max": [
+        -0.6442319750785828,
+        0.22400900721549988,
+        0.09738700091838837
+      ],
+      "center": [
+        -0.7353554964065552,
+        0.18072101473808289,
+        -0.02650199830532074
+      ],
+      "explode": [
+        0,
+        0,
+        0.18
+      ],
+      "vertices": 29844,
+      "triangles": 43540,
+      "observed": "Visual abdominal surfaces. Plate independence and waist travel are not established.",
+      "proposal": "Resolve overlapping plate seams against the selected waist mechanism.",
+      "check": "Test bending clearance and avoid support scars on visible surfaces."
+    },
+    {
+      "id": "K05",
+      "key": "PELVIS",
+      "name": "Pelvic envelope",
+      "region": "Pelvis",
+      "min": [
+        -0.8504850268363953,
+        0.01457700040191412,
+        -0.11884500086307526
+      ],
+      "max": [
+        -0.6111389994621277,
+        0.14302299916744232,
+        0.15775799751281738
+      ],
+      "center": [
+        -0.7308120131492615,
+        0.07880000025033951,
+        0.019456498324871063
+      ],
+      "explode": [
+        0,
+        -0.03,
+        0.06
+      ],
+      "vertices": 65665,
+      "triangles": 89599,
+      "observed": "Pelvis exterior is observed; internal load path, motor mounts and bearings are unverified.",
+      "proposal": "Separate structural carrier from serviceable cosmetic front/rear covers.",
+      "check": "Confirm hip sweep, carrier load cases and assembly access."
+    },
+    {
+      "id": "K06",
+      "key": "SHOULDER_R",
+      "name": "Right shoulder cap",
+      "region": "Arms",
+      "min": [
+        -0.9122369885444641,
+        0.30629798769950867,
+        0.0352960005402565
+      ],
+      "max": [
+        -0.8023819923400879,
+        0.39910098910331726,
+        0.15272100269794464
+      ],
+      "center": [
+        -0.8573094606399536,
+        0.35269948840141296,
+        0.09400850534439087
+      ],
+      "explode": [
+        -0.16,
+        0.025,
+        0.04
+      ],
+      "vertices": 12472,
+      "triangles": 18299,
+      "observed": "Visible shoulder envelope, including painted mechanical detail.",
+      "proposal": "Define a removable cap around a supplied shoulder actuator envelope.",
+      "check": "Check shoulder range, flange access and cable routing."
+    },
+    {
+      "id": "K07",
+      "key": "UPPER_ARM_R",
+      "name": "Right upper-arm region",
+      "region": "Arms",
+      "min": [
+        -0.9292449951171875,
+        0.21274900436401367,
+        0.06112699955701828
+      ],
+      "max": [
+        -0.818556010723114,
+        0.31420499086380005,
+        0.14767299592494965
+      ],
+      "center": [
+        -0.8739005327224731,
+        0.26347699761390686,
+        0.10439999401569366
+      ],
+      "explode": [
+        -0.26,
+        0,
+        0.04
+      ],
+      "vertices": 6873,
+      "triangles": 10894,
+      "observed": "Upper-arm exterior grouped at coarse joint boundaries.",
+      "proposal": "Define shell seam and anti-rotation locating features from actual arm hardware.",
+      "check": "Check print orientation and fastener access."
+    },
+    {
+      "id": "K08",
+      "key": "ELBOW_R",
+      "name": "Right elbow envelope",
+      "region": "Arms",
+      "min": [
+        -0.9458310008049011,
+        0.17149999737739563,
+        0.07344699651002884
+      ],
+      "max": [
+        -0.8519669771194458,
+        0.2174060046672821,
+        0.16369299590587616
+      ],
+      "center": [
+        -0.8988989591598511,
+        0.19445300102233887,
+        0.1185699999332428
+      ],
+      "explode": [
+        -0.26,
+        0,
+        0.04
+      ],
+      "vertices": 4663,
+      "triangles": 6673,
+      "observed": "The visible elbow surface does not establish a functional bearing or axis.",
+      "proposal": "Reference the real elbow axis and reserve an accessible joint cover.",
+      "check": "Check flexion clearance, pinch zones and cable flex."
+    },
+    {
+      "id": "K09",
+      "key": "FOREARM_R",
+      "name": "Right forearm shell region",
+      "region": "Arms",
+      "min": [
+        -0.9484140276908875,
+        0.029438000172376633,
+        0.07371100038290024
+      ],
+      "max": [
+        -0.8030210137367249,
+        0.17871099710464478,
+        0.18559299409389496
+      ],
+      "center": [
+        -0.8757175207138062,
+        0.10407450050115585,
+        0.1296519935131073
+      ],
+      "explode": [
+        -0.26,
+        0,
+        0.04
+      ],
+      "vertices": 17303,
+      "triangles": 25312,
+      "observed": "Textured forearm exterior; connectors and internal volume are unverified.",
+      "proposal": "Define dorsal access and a wrist-side service route.",
+      "check": "Check wall thickness, insert seating and harness clearance."
+    },
+    {
+      "id": "K10",
+      "key": "HAND_R",
+      "name": "Right hand & wrist",
+      "region": "Hands",
+      "min": [
+        -0.9228760004043579,
+        -0.09130900353193283,
+        0.11191099882125854
+      ],
+      "max": [
+        -0.8140680193901062,
+        0.03428899869322777,
+        0.1894409954547882
+      ],
+      "center": [
+        -0.8684719800949097,
+        -0.02851000241935253,
+        0.15067599713802338
+      ],
+      "explode": [
+        -0.26,
+        0,
+        0.04
+      ],
+      "vertices": 8666,
+      "triangles": 11345,
+      "observed": "Hand shape from this Meshy source. Not a verified ORCA Hand model or mounting interface.",
+      "proposal": "Import the approved hand CAD before creating a wrist adapter.",
+      "check": "Check mounting pattern, loads, connector access and finger clearances."
+    },
+    {
+      "id": "K11",
+      "key": "SHOULDER_L",
+      "name": "Left shoulder cap",
+      "region": "Arms",
+      "min": [
+        -0.7248409986495972,
+        0.30763301253318787,
+        -0.1808840036392212
+      ],
+      "max": [
+        -0.6273699998855591,
+        0.39835599064826965,
+        -0.020508000627160072
+      ],
+      "center": [
+        -0.6761054992675781,
+        0.35299450159072876,
+        -0.10069600492715836
+      ],
+      "explode": [
+        0.16,
+        0.025,
+        0.04
+      ],
+      "vertices": 12742,
+      "triangles": 18660,
+      "observed": "Visible shoulder envelope, including painted mechanical detail.",
+      "proposal": "Define a removable cap around a supplied shoulder actuator envelope.",
+      "check": "Check shoulder range, flange access and cable routing."
+    },
+    {
+      "id": "K12",
+      "key": "UPPER_ARM_L",
+      "name": "Left upper-arm region",
+      "region": "Arms",
+      "min": [
+        -0.7160890102386475,
+        0.21289099752902985,
+        -0.18552200496196747
+      ],
+      "max": [
+        -0.6252239942550659,
+        0.31269800662994385,
+        -0.06314799934625626
+      ],
+      "center": [
+        -0.6706565022468567,
+        0.26279449462890625,
+        -0.12433500587940216
+      ],
+      "explode": [
+        0.26,
+        0,
+        0.04
+      ],
+      "vertices": 6937,
+      "triangles": 10762,
+      "observed": "Upper-arm exterior grouped at coarse joint boundaries.",
+      "proposal": "Define shell seam and anti-rotation locating features from actual arm hardware.",
+      "check": "Check print orientation and fastener access."
+    },
+    {
+      "id": "K13",
+      "key": "ELBOW_L",
+      "name": "Left elbow envelope",
+      "region": "Arms",
+      "min": [
+        -0.7045350074768066,
+        0.17036600410938263,
+        -0.194582000374794
+      ],
+      "max": [
+        -0.617572009563446,
+        0.21675099432468414,
+        -0.11076600104570389
+      ],
+      "center": [
+        -0.6610535383224487,
+        0.1935584992170334,
+        -0.15267400443553925
+      ],
+      "explode": [
+        0.26,
+        0,
+        0.04
+      ],
+      "vertices": 4297,
+      "triangles": 5655,
+      "observed": "The visible elbow surface does not establish a functional bearing or axis.",
+      "proposal": "Reference the real elbow axis and reserve an accessible joint cover.",
+      "check": "Check flexion clearance, pinch zones and cable flex."
+    },
+    {
+      "id": "K14",
+      "key": "FOREARM_L",
+      "name": "Left forearm shell region",
+      "region": "Arms",
+      "min": [
+        -0.7045350074768066,
+        0.029691999778151512,
+        -0.19736500084400177
+      ],
+      "max": [
+        -0.5816699862480164,
+        0.1787469983100891,
+        -0.047593001276254654
+      ],
+      "center": [
+        -0.6431025266647339,
+        0.10421949625015259,
+        -0.12247899919748306
+      ],
+      "explode": [
+        0.26,
+        0,
+        0.04
+      ],
+      "vertices": 16954,
+      "triangles": 23655,
+      "observed": "Textured forearm exterior; connectors and internal volume are unverified.",
+      "proposal": "Define dorsal access and a wrist-side service route.",
+      "check": "Check wall thickness, insert seating and harness clearance."
+    },
+    {
+      "id": "K15",
+      "key": "HAND_L",
+      "name": "Left hand & wrist",
+      "region": "Hands",
+      "min": [
+        -0.6693310141563416,
+        -0.09179700165987015,
+        -0.167263001203537
+      ],
+      "max": [
+        -0.5726690292358398,
+        0.034596998244524,
+        -0.05000000074505806
+      ],
+      "center": [
+        -0.6210000514984131,
+        -0.028600001707673073,
+        -0.10863149911165237
+      ],
+      "explode": [
+        0.26,
+        0,
+        0.04
+      ],
+      "vertices": 9953,
+      "triangles": 13873,
+      "observed": "Hand shape from this Meshy source. Not a verified ORCA Hand model or mounting interface.",
+      "proposal": "Import the approved hand CAD before creating a wrist adapter.",
+      "check": "Check mounting pattern, loads, connector access and finger clearances."
+    },
+    {
+      "id": "K16",
+      "key": "THIGH_R",
+      "name": "Right thigh shell region",
+      "region": "Legs",
+      "min": [
+        -0.8550209999084473,
+        -0.14225900173187256,
+        0.0291569996625185
+      ],
+      "max": [
+        -0.7162929773330688,
+        0.022498000413179398,
+        0.1623850017786026
+      ],
+      "center": [
+        -0.7856569886207581,
+        -0.05988050252199173,
+        0.09577099978923798
+      ],
+      "explode": [
+        -0.14,
+        -0.015,
+        0.06
+      ],
+      "vertices": 34659,
+      "triangles": 52384,
+      "observed": "Thigh envelope from the source. Shell thickness and load-bearing structure are not specified.",
+      "proposal": "Keep cosmetic shell distinct from the structural thigh carrier.",
+      "check": "Check hip/knee motion, print bed fit and removable seam."
+    },
+    {
+      "id": "K17",
+      "key": "KNEE_R",
+      "name": "Right knee envelope",
+      "region": "Legs",
+      "min": [
+        -0.9018489718437195,
+        -0.234375,
+        0.0248160008341074
+      ],
+      "max": [
+        -0.7644829750061035,
+        -0.13771000504493713,
+        0.16232000291347504
+      ],
+      "center": [
+        -0.8331660032272339,
+        -0.18604250252246857,
+        0.09356800466775894
+      ],
+      "explode": [
+        -0.14,
+        -0.06,
+        0.06
+      ],
+      "vertices": 15032,
+      "triangles": 21529,
+      "observed": "Visual knee region, not a validated actuator or impact guard.",
+      "proposal": "Fit the cover around measured knee travel and fastener access.",
+      "check": "Verify joint sweep and avoid interference under flexion."
+    },
+    {
+      "id": "K18",
+      "key": "SHIN_R",
+      "name": "Right shin shell region",
+      "region": "Legs",
+      "min": [
+        -0.9137099981307983,
+        -0.44248801469802856,
+        0.015553000383079052
+      ],
+      "max": [
+        -0.7908160090446472,
+        -0.22668099403381348,
+        0.14563100039958954
+      ],
+      "center": [
+        -0.8522629737854004,
+        -0.334584504365921,
+        0.08059199899435043
+      ],
+      "explode": [
+        -0.14,
+        -0.13,
+        0.06
+      ],
+      "vertices": 36024,
+      "triangles": 53628,
+      "observed": "Shin exterior with original surface texture and geometry.",
+      "proposal": "Define rear access, locating keys and shell ribs after process selection.",
+      "check": "Check minimum wall thickness, insert placement and print orientation."
+    },
+    {
+      "id": "K19",
+      "key": "ANKLE_R",
+      "name": "Right ankle envelope",
+      "region": "Legs",
+      "min": [
+        -0.9240760207176208,
+        -0.5083010196685791,
+        0.033594999462366104
+      ],
+      "max": [
+        -0.8275780081748962,
+        -0.4365929961204529,
+        0.16544599831104279
+      ],
+      "center": [
+        -0.8758270144462585,
+        -0.472447007894516,
+        0.0995204970240593
+      ],
+      "explode": [
+        -0.14,
+        -0.2,
+        0.06
+      ],
+      "vertices": 10922,
+      "triangles": 14305,
+      "observed": "Visible ankle interface. Pitch/roll axes and bearing tolerances are unverified.",
+      "proposal": "Use supplied ankle hardware to define real interfaces.",
+      "check": "Check cable motion, foot clearance and assembly tool paths."
+    },
+    {
+      "id": "K20",
+      "key": "FOOT_R",
+      "name": "Right foot & sole region",
+      "region": "Legs",
+      "min": [
+        -0.9317190051078796,
+        -0.5741040110588074,
+        0.01578100025653839
+      ],
+      "max": [
+        -0.7918580174446106,
+        -0.5017899870872498,
+        0.22554199397563934
+      ],
+      "center": [
+        -0.8617885112762451,
+        -0.5379469990730286,
+        0.12066149711608887
+      ],
+      "explode": [
+        -0.14,
+        -0.25,
+        0.06
+      ],
+      "vertices": 21655,
+      "triangles": 29078,
+      "observed": "Foot exterior; no measured sole friction, stability, force sensing or load rating.",
+      "proposal": "Separate sole, shell and structural foot only after hardware definition.",
+      "check": "Validate load path, sole attachment and center-of-pressure envelope."
+    },
+    {
+      "id": "K21",
+      "key": "THIGH_L",
+      "name": "Left thigh shell region",
+      "region": "Legs",
+      "min": [
+        -0.7476490139961243,
+        -0.14221400022506714,
+        -0.12423499673604965
+      ],
+      "max": [
+        -0.6077989935874939,
+        0.021330000832676888,
+        0.047283999621868134
+      ],
+      "center": [
+        -0.6777240037918091,
+        -0.0604420006275177,
+        -0.03847549855709076
+      ],
+      "explode": [
+        0.14,
+        -0.015,
+        0.06
+      ],
+      "vertices": 32394,
+      "triangles": 48223,
+      "observed": "Thigh envelope from the source. Shell thickness and load-bearing structure are not specified.",
+      "proposal": "Keep cosmetic shell distinct from the structural thigh carrier.",
+      "check": "Check hip/knee motion, print bed fit and removable seam."
+    },
+    {
+      "id": "K22",
+      "key": "KNEE_L",
+      "name": "Left knee envelope",
+      "region": "Legs",
+      "min": [
+        -0.7388449907302856,
+        -0.23335200548171997,
+        -0.15877699851989746
+      ],
+      "max": [
+        -0.6117479801177979,
+        -0.13677099347114563,
+        -0.03822999820113182
+      ],
+      "center": [
+        -0.6752964854240417,
+        -0.1850614994764328,
+        -0.09850350022315979
+      ],
+      "explode": [
+        0.14,
+        -0.06,
+        0.06
+      ],
+      "vertices": 13027,
+      "triangles": 18951,
+      "observed": "Visual knee region, not a validated actuator or impact guard.",
+      "proposal": "Fit the cover around measured knee travel and fastener access.",
+      "check": "Verify joint sweep and avoid interference under flexion."
+    },
+    {
+      "id": "K23",
+      "key": "SHIN_L",
+      "name": "Left shin shell region",
+      "region": "Legs",
+      "min": [
+        -0.7541369795799255,
+        -0.44266998767852783,
+        -0.17829999327659607
+      ],
+      "max": [
+        -0.6265739798545837,
+        -0.22721999883651733,
+        -0.057034000754356384
+      ],
+      "center": [
+        -0.6903554797172546,
+        -0.3349449932575226,
+        -0.11766699701547623
+      ],
+      "explode": [
+        0.14,
+        -0.13,
+        0.06
+      ],
+      "vertices": 35751,
+      "triangles": 54602,
+      "observed": "Shin exterior with original surface texture and geometry.",
+      "proposal": "Define rear access, locating keys and shell ribs after process selection.",
+      "check": "Check minimum wall thickness, insert placement and print orientation."
+    },
+    {
+      "id": "K24",
+      "key": "ANKLE_L",
+      "name": "Left ankle envelope",
+      "region": "Legs",
+      "min": [
+        -0.7184960246086121,
+        -0.5078120231628418,
+        -0.18597100675106049
+      ],
+      "max": [
+        -0.6048409938812256,
+        -0.43755999207496643,
+        -0.10570699721574783
+      ],
+      "center": [
+        -0.6616685390472412,
+        -0.4726859927177429,
+        -0.14583900570869446
+      ],
+      "explode": [
+        0.14,
+        -0.2,
+        0.06
+      ],
+      "vertices": 7896,
+      "triangles": 11390,
+      "observed": "Visible ankle interface. Pitch/roll axes and bearing tolerances are unverified.",
+      "proposal": "Use supplied ankle hardware to define real interfaces.",
+      "check": "Check cable motion, foot clearance and assembly tool paths."
+    },
+    {
+      "id": "K25",
+      "key": "FOOT_L",
+      "name": "Left foot & sole region",
+      "region": "Legs",
+      "min": [
+        -0.7313879728317261,
+        -0.5852590203285217,
+        -0.18593299388885498
+      ],
+      "max": [
+        -0.520671010017395,
+        -0.5027869939804077,
+        -0.07884199917316437
+      ],
+      "center": [
+        -0.6260294914245605,
+        -0.5440230369567871,
+        -0.13238748908042908
+      ],
+      "explode": [
+        0.14,
+        -0.25,
+        0.06
+      ],
+      "vertices": 19737,
+      "triangles": 28914,
+      "observed": "Foot exterior; no measured sole friction, stability, force sensing or load rating.",
+      "proposal": "Separate sole, shell and structural foot only after hardware definition.",
+      "check": "Validate load path, sole attachment and center-of-pressure envelope."
+    }
+  ]
+}

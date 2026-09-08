@@ -1,0 +1,56 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b1017;
+  --panel: #111720;
+  --surface: #19212c;
+  --line: #29323f;
+  --text: #edf1f8;
+  --muted: #95a2b5;
+  --dim: #738298;
+  --accent: #a994ff;
+  --accent-bg: #312749;
+  --cyan: #7dd3e3;
+  --amber: #e2b66c;
+  --font: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 15px/1.5 var(--font);
+  overflow: hidden;
+}
+
+button, input, select {
+  font: inherit;
+}
+
+button {
+  color: inherit;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+button:not(:disabled):hover {
+  background: #263044;
+}
+
+a {
+  color: var(--cyan);
+}
+
+code {
+  font-size: 0.9em;
+  color: var(--muted);
+}
