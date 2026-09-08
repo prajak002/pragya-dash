@@ -4,8 +4,10 @@ import { LayerDiagram } from "./diagrams/LayerDiagram";
 import { TraceDiagram } from "./diagrams/TraceDiagram";
 import { ControlDeck } from "./layout/ControlDeck";
 import { TopTabs } from "./layout/TopTabs";
+import { BoardDesigns } from "./panels/BoardDesigns";
 import { ConfigurationDetail } from "./panels/ConfigurationDetail";
 import { Documentation } from "./panels/Documentation";
+import { FindAPart } from "./panels/FindAPart";
 import { HeadV0Board } from "./panels/HeadV0Board";
 import { Inspector } from "./panels/Inspector";
 import { SystemTree } from "./panels/SystemTree";
@@ -102,6 +104,10 @@ export default function App() {
           <span className="brand-mark">क</span>
           <span className="brand-name">Kalki<span className="brand-separator">/</span><span className="brand-product">DIGITAL ENGINEERING TWIN</span></span>
         </a>
+        <div className="topbar-tools">
+          <FindAPart />
+          <BoardDesigns />
+        </div>
         <span className="revision">REFERENCE: ASIMOV-1 <b>25 DOF</b></span>
       </header>
 
