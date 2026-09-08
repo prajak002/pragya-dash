@@ -1,7 +1,9 @@
+import { isBoardNode } from "../canonical/boardManual";
 import { neighborsOf } from "../canonical/model";
 import { colorOf, labelOf } from "../diagrams/layout";
 import { jointIdFromElectricalId, useTelemetryStore } from "../state/telemetry";
 import { useTwinStore } from "../state/store";
+import { BoardManual } from "./BoardManual";
 
 function badgeFor(evidenceClass: "observed" | "asimov-1-reference" | "illustrative") {
   switch (evidenceClass) {
@@ -95,7 +97,9 @@ export function Inspector() {
           </>
         )}
 
-        {node && node.kind === "electrical" && (
+        {node && node.kind === "electrical" && isBoardNode(node) && <BoardManual board={node} />}
+
+        {node && node.kind === "electrical" && !isBoardNode(node) && (
           <>
             <div className="part-code">{node.role.toUpperCase()}</div>
             <h2>{node.label}</h2>
@@ -131,7 +135,7 @@ export function Inspector() {
           </>
         )}
 
-        {node && (
+        {node && !isBoardNode(node) && (
           <>
             <h3>Connections</h3>
             {neighborsOf(model, node.id).map((e, i) => {
@@ -151,11 +155,13 @@ export function Inspector() {
                 </button>
               );
             })}
-
-            <button className="primary-button trace-button" onClick={() => runTrace(node.id)}>
-              Trace this component
-            </button>
           </>
+        )}
+
+        {node && (
+          <button className="primary-button trace-button" onClick={() => runTrace(node.id)}>
+            Trace this component
+          </button>
         )}
       </div>
       <div className="inspector-footer">
