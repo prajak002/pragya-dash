@@ -1,10 +1,34 @@
-import { Canvas } from "@react-three/fiber";
-import { Suspense } from "react";
+import { Canvas, useThree } from "@react-three/fiber";
+import { Suspense, useEffect } from "react";
 import { useTwinStore } from "../state/store";
 import { CameraRig } from "./CameraRig";
 import { ConfigurationsScene } from "./ConfigurationsScene";
 import { KalkiBody } from "./KalkiBody";
 import { PhysicsBody } from "./PhysicsBody";
+
+/**
+ * If the tab is backgrounded while this page first loads (e.g. a link opened
+ * in a new background tab), Chrome throttles the ResizeObserver Canvas uses
+ * to size itself, which can leave it never rendering a first frame at all —
+ * even after the tab becomes visible, since nothing re-triggers that sizing
+ * once it's missed its window. This nudges a resize + a manual invalidate
+ * whenever the document becomes visible, so a canvas stuck in that state
+ * gets a fresh chance to size and render itself.
+ */
+function VisibilityKick() {
+  const invalidate = useThree((s) => s.invalidate);
+  useEffect(() => {
+    const kick = () => {
+      if (document.visibilityState !== "visible") return;
+      window.dispatchEvent(new Event("resize"));
+      invalidate();
+    };
+    document.addEventListener("visibilitychange", kick);
+    kick();
+    return () => document.removeEventListener("visibilitychange", kick);
+  }, [invalidate]);
+  return null;
+}
 
 function Loader3D() {
   return (
@@ -67,6 +91,7 @@ export function Scene() {
         <SceneContent />
       </Suspense>
 
+      <VisibilityKick />
       <CameraRig />
     </Canvas>
   );
